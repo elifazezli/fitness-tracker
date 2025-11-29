@@ -40,3 +40,35 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+//Health Profile Routes
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/health-profile', [HealthProfileController::class, 'index'])->name('health-profile.show');
+    Route::get('/health-profile/create', [HealthProfileController::class, 'create'])->name('health-profile.create');
+    Route::post('/health-profile', [HealthProfileController::class, 'store'])->name('health-profile.store');
+    Route::get('/health-profile/edit', [HealthProfileController::class, 'edit'])->name('health-profile.edit');
+    Route::put('/health-profile', [HealthProfileController::class, 'update'])->name('health-profile.update');
+});
+// Body Measurements Routes
+Route::middleware(['auth'])->group(function () {
+    Route::get('/measurements', [BodyMeasurementController::class, 'index'])
+        ->name('measurements.index');
+    Route::get('/measurements/create', [BodyMeasurementController::class, 'create'])
+        ->name('measurements.create');
+    Route::post('/measurements', [BodyMeasurementController::class, 'store'])
+        ->name('measurements.store');
+    Route::get('/measurements/{measurement}', [BodyMeasurementController::class, 'show'])
+        ->name('measurements.show');
+    Route::delete('/measurements/{measurement}', [BodyMeasurementController::class, 'destroy'])
+        ->name('measurements.destroy');
+});
+// Workout Plan Routes
+Route::middleware(['auth'])->group(function () {
+    Route::get('/workout-plans', [WorkoutPlanController::class, 'index'])->name('workout-plans.index');
+    Route::get('/workout-plans/create', [WorkoutPlanController::class, 'create'])->name('workout-plans.create');
+    Route::post('/workout-plans', [WorkoutPlanController::class, 'store'])->name('workout-plans.store');
+    Route::get('/workout-plans/{plan}', [WorkoutPlanController::class, 'show'])->name('workout-plans.show');
+    Route::get('/workout-plans/{plan}/edit', [WorkoutPlanController::class, 'edit'])->name('workout-plans.edit');
+    Route::put('/workout-plans/{plan}', [WorkoutPlanController::class, 'update'])->name('workout-plans.update');
+    Route::delete('/workout-plans/{plan}', [WorkoutPlanController::class, 'destroy'])->name('workout-plans.destroy');
+});

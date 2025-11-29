@@ -124,10 +124,11 @@
                             @enderror
                         </div>
 
-                        <div class="flex items-center justify-end mt-6">
-                            <button type="submit" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700">
-                                Save
-                            </button>
+                        <div class="bg-white overflow-auto shadow-sm sm:rounded-lg">
+                           <button class="inline-flex items-center px-4 py-2 bg-blue-600 text-black rounded-md shadow-md ring-2 ring-blue-300 hover:bg-blue-700">
+    Save
+</button>
+
                         </div>
                     </form>
                 </div>
