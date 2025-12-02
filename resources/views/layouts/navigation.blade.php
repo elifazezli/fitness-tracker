@@ -15,14 +15,14 @@
     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
         {{ __('Dashboard') }}
     </x-nav-link>
-    <x-nav-link :href="route('health-profile.index')" :active="request()->routeIs('health-profile.*')">
+    <x-nav-link :href="route('health-profile.show')" :active="request()->routeIs('health-profile.*')">
         {{ __('Health Profile') }}
     </x-nav-link>
     <x-nav-link :href="route('measurements.index')" :active="request()->routeIs('measurements.*')">
         {{ __('My Measurements') }}
     </x-nav-link>
     <x-nav-link :href="route('workout-plans.index')" :active="request()->routeIs('workout-plans.*')">
-        {{ __('Exercise Planls') }}
+        {{ __('Exercise Plans') }}
     </x-nav-link>
     <x-nav-link :href="route('progress.index')" :active="request()->routeIs('progress.*')">
         {{ __('Progress') }}
